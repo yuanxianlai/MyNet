@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="76e4c78df6a547ba97e9bef33fc7d683" Name="关系图1" ZoomLevel="100" DisplayType="true" SnapToGrid="false" ShowGrid="true" >
+        <EntityTypeShape EntityType="MyProject.Config_AddEdit_Column" Width="1.5" PointX="2.6347631302824075" PointY="21.279357562437355" />
+        <EntityTypeShape EntityType="MyProject.Config_AddEdit_Table" Width="1.5" PointX="9.14906384290618" PointY="1.2523481851687413" />
+        <EntityTypeShape EntityType="MyProject.Config_List_Column" Width="1.5" PointX="9.6899712000461165" PointY="8.657779816844398" />
+        <EntityTypeShape EntityType="MyProject.Config_List_Table" Width="1.5" PointX="4.0800770018622643" PointY="1.7881609656792883" />
+        <EntityTypeShape EntityType="MyProject.Config_Tree_Column" Width="1.5" PointX="8.8215561643343214" PointY="2.300793201802668" />
+        <EntityTypeShape EntityType="MyProject.Config_Tree_Tale" Width="1.5" PointX="4.951838322427049" PointY="30.331685214457888" />
+        <EntityTypeShape EntityType="MyProject.Sys_Module_Info" Width="1.5" PointX="4.064718773618675" PointY="26.8138590579917" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

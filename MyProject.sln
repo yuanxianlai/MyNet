@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyConsole", "MyConsole\MyConsole.csproj", "{02736538-9904-4D31-BA9F-7C83443DF775}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCommon", "MyCommon\MyCommon.csproj", "{2B811BDC-E230-4B68-8454-4DEF01A04203}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyModule", "MyModule\MyModule.csproj", "{A4ED95A5-F7C1-4797-BBF1-D8ED95344A5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMvc", "MyMvc\MyMvc.csproj", "{FD376E6B-42F8-42E2-969C-0D211934DD09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{6751AD80-1096-484A-B901-29F6A8F8D557}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\SZMDRP\bin\Ionic.Zip.dll = ..\..\SZMDRP\bin\Ionic.Zip.dll
+		..\..\SZMDRP\bin\Newtonsoft.Json.dll = ..\..\SZMDRP\bin\Newtonsoft.Json.dll
+		C:\Users\Administrator\Desktop\MyLib\Oracle.ManagedDataAccess.dll = C:\Users\Administrator\Desktop\MyLib\Oracle.ManagedDataAccess.dll
+		C:\Users\Administrator\Desktop\Lib\System.Web.Optimization.dll = C:\Users\Administrator\Desktop\Lib\System.Web.Optimization.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nopi", "Nopi", "{977A47EA-3D9B-484E-8603-280244C3F43E}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\Administrator\Desktop\MyLib\Nopi\ICSharpCode.SharpZipLib.dll = C:\Users\Administrator\Desktop\MyLib\Nopi\ICSharpCode.SharpZipLib.dll
+		C:\Users\Administrator\Desktop\MyLib\Nopi\NPOI.dll = C:\Users\Administrator\Desktop\MyLib\Nopi\NPOI.dll
+		C:\Users\Administrator\Desktop\MyLib\Nopi\NPOI.OOXML.dll = C:\Users\Administrator\Desktop\MyLib\Nopi\NPOI.OOXML.dll
+		C:\Users\Administrator\Desktop\MyLib\Nopi\NPOI.OpenXml4Net.dll = C:\Users\Administrator\Desktop\MyLib\Nopi\NPOI.OpenXml4Net.dll
+		C:\Users\Administrator\Desktop\MyLib\Nopi\NPOI.OpenXmlFormats.dll = C:\Users\Administrator\Desktop\MyLib\Nopi\NPOI.OpenXmlFormats.dll
+		C:\Users\Administrator\Desktop\MyLib\Nopi\NPOI.XML = C:\Users\Administrator\Desktop\MyLib\Nopi\NPOI.XML
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02736538-9904-4D31-BA9F-7C83443DF775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02736538-9904-4D31-BA9F-7C83443DF775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02736538-9904-4D31-BA9F-7C83443DF775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02736538-9904-4D31-BA9F-7C83443DF775}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B811BDC-E230-4B68-8454-4DEF01A04203}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B811BDC-E230-4B68-8454-4DEF01A04203}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B811BDC-E230-4B68-8454-4DEF01A04203}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B811BDC-E230-4B68-8454-4DEF01A04203}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4ED95A5-F7C1-4797-BBF1-D8ED95344A5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4ED95A5-F7C1-4797-BBF1-D8ED95344A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4ED95A5-F7C1-4797-BBF1-D8ED95344A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4ED95A5-F7C1-4797-BBF1-D8ED95344A5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD376E6B-42F8-42E2-969C-0D211934DD09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD376E6B-42F8-42E2-969C-0D211934DD09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD376E6B-42F8-42E2-969C-0D211934DD09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD376E6B-42F8-42E2-969C-0D211934DD09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{977A47EA-3D9B-484E-8603-280244C3F43E} = {6751AD80-1096-484A-B901-29F6A8F8D557}
+	EndGlobalSection
+EndGlobal

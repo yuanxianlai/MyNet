@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MyProject.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="MyProjectStoreContainer">
+          <EntitySet Name="Config_AddEdit_Column" EntityType="MyProject.Store.Config_AddEdit_Column" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Config_AddEdit_Table" EntityType="MyProject.Store.Config_AddEdit_Table" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Config_List_Column" EntityType="MyProject.Store.Config_List_Column" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Config_List_Table" EntityType="MyProject.Store.Config_List_Table" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Config_Tree_Column" EntityType="MyProject.Store.Config_Tree_Column" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Config_Tree_Tale" EntityType="MyProject.Store.Config_Tree_Tale" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sys_Module_Info" EntityType="MyProject.Store.Sys_Module_Info" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Config_AddEdit_Column">
+          <Key>
+            <PropertyRef Name="CAC_ID" />
+          </Key>
+          <Property Name="CAC_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CAT_ID" Type="int" Nullable="false" />
+          <Property Name="CAT_Column" Type="nvarchar" Nullable="false" />
+          <Property Name="CAT_ColunmZH" Type="nvarchar" Nullable="false" />
+          <Property Name="CAT_Status" Type="nchar" Nullable="false" MaxLength="3" />
+          <Property Name="CAT_EditType" Type="nvarchar" Nullable="false" />
+          <Property Name="CAT_ValidateRules" Type="nvarchar" Nullable="false" />
+          <Property Name="CAT_ColumnOrderBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Config_AddEdit_Table">
+          <Key>
+            <PropertyRef Name="CAT_ID" />
+          </Key>
+          <Property Name="CAT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SMI_Code" Type="nvarchar" Nullable="false" />
+          <Property Name="CAT_Table" Type="nvarchar" Nullable="false" />
+          <Property Name="CAT_Status" Type="nchar" Nullable="false" MaxLength="3" />
+          <Property Name="CAT_Where" Type="nvarchar" Nullable="false" />
+          <Property Name="CAT_OrderBy" Type="nvarchar" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Config_List_Column">
+          <Key>
+            <PropertyRef Name="CLC_ID" />
+          </Key>
+          <Property Name="CLC_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CLC_Column" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CLC_ColumnZH" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="CLC_Status" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="CLC_JoinTable" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CLC_JoinWhere" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="CLC_JoinColumnID" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="CLC_JoinColumnValue" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="CLC_ColumnType" Type="int" Nullable="false" />
+          <Property Name="CLT_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Config_List_Table">
+          <Key>
+            <PropertyRef Name="CLT_ID" />
+          </Key>
+          <Property Name="CLT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SMI_Code" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="CLT_Table" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CLT_Status" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="CLT_Where" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="CLT_OrderBy" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Config_Tree_Column">
+          <Key>
+            <PropertyRef Name="CTC_ID" />
+          </Key>
+          <Property Name="CTC_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CTT_ID" Type="int" Nullable="false" />
+          <Property Name="CTC_Column" Type="nvarchar" Nullable="false" />
+          <Property Name="CTC_Status" Type="nchar" Nullable="false" MaxLength="3" />
+          <Property Name="CTC_Url" Type="nvarchar" Nullable="false" />
+          <Property Name="CTC_ColumnType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Config_Tree_Tale">
+          <Key>
+            <PropertyRef Name="CTT_ID" />
+          </Key>
+          <Property Name="CTT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SMI_Code" Type="nvarchar" Nullable="false" />
+          <Property Name="CTT_Table" Type="nvarchar" Nullable="false" />
+          <Property Name="CTT_Status" Type="nchar" Nullable="false" MaxLength="3" />
+          <Property Name="CTT_Where" Type="nvarchar" Nullable="false" />
+          <Property Name="CTT_OrderBy" Type="nvarchar" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_Module_Info">
+          <Key>
+            <PropertyRef Name="SMI_ID" />
+          </Key>
+          <Property Name="SMI_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SMI_Code" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="SMI_Title" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="SMI_Status" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="SMI_ParentID" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="SMI_Url" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="MyProject" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="MyProjectContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Config_AddEdit_Column" EntityType="MyProject.Config_AddEdit_Column" />
+          <EntitySet Name="Config_AddEdit_Table" EntityType="MyProject.Config_AddEdit_Table" />
+          <EntitySet Name="Config_List_Column" EntityType="MyProject.Config_List_Column" />
+          <EntitySet Name="Config_List_Table" EntityType="MyProject.Config_List_Table" />
+          <EntitySet Name="Config_Tree_Column" EntityType="MyProject.Config_Tree_Column" />
+          <EntitySet Name="Config_Tree_Tale" EntityType="MyProject.Config_Tree_Tale" />
+          <EntitySet Name="Sys_Module_Info" EntityType="MyProject.Sys_Module_Info" />
+        </EntityContainer>
+        <EntityType Name="Config_AddEdit_Column">
+          <Key>
+            <PropertyRef Name="CAC_ID" />
+          </Key>
+          <Property Type="Int32" Name="CAC_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CAT_ID" Nullable="false" />
+          <Property Type="String" Name="CAT_Column" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CAT_ColunmZH" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CAT_Status" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="CAT_EditType" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CAT_ValidateRules" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CAT_ColumnOrderBy" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Config_AddEdit_Table">
+          <Key>
+            <PropertyRef Name="CAT_ID" />
+          </Key>
+          <Property Type="Int32" Name="CAT_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SMI_Code" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CAT_Table" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CAT_Status" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="CAT_Where" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CAT_OrderBy" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Config_List_Column">
+          <Key>
+            <PropertyRef Name="CLC_ID" />
+          </Key>
+          <Property Type="Int32" Name="CLC_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CLC_Column" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CLC_ColumnZH" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CLC_Status" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CLC_JoinTable" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CLC_JoinWhere" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CLC_JoinColumnID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CLC_JoinColumnValue" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CLC_ColumnType" Nullable="false" />
+          <Property Type="Int32" Name="CLT_ID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Config_List_Table">
+          <Key>
+            <PropertyRef Name="CLT_ID" />
+          </Key>
+          <Property Type="Int32" Name="CLT_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SMI_Code" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CLT_Table" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CLT_Status" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CLT_Where" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CLT_OrderBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Config_Tree_Column">
+          <Key>
+            <PropertyRef Name="CTC_ID" />
+          </Key>
+          <Property Type="Int32" Name="CTC_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CTT_ID" Nullable="false" />
+          <Property Type="String" Name="CTC_Column" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CTC_Status" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="CTC_Url" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CTC_ColumnType" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Config_Tree_Tale">
+          <Key>
+            <PropertyRef Name="CTT_ID" />
+          </Key>
+          <Property Type="Int32" Name="CTT_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SMI_Code" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CTT_Table" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CTT_Status" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="CTT_Where" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CTT_OrderBy" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Sys_Module_Info">
+          <Key>
+            <PropertyRef Name="SMI_ID" />
+          </Key>
+          <Property Type="Int32" Name="SMI_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SMI_Code" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SMI_Title" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SMI_Status" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="SMI_ParentID" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SMI_Url" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyProjectStoreContainer" CdmEntityContainer="MyProjectContainer">
+          <EntitySetMapping Name="Config_AddEdit_Column">
+            <EntityTypeMapping TypeName="MyProject.Config_AddEdit_Column">
+              <MappingFragment StoreEntitySet="Config_AddEdit_Column">
+                <ScalarProperty Name="CAT_ColumnOrderBy" ColumnName="CAT_ColumnOrderBy" />
+                <ScalarProperty Name="CAT_ValidateRules" ColumnName="CAT_ValidateRules" />
+                <ScalarProperty Name="CAT_EditType" ColumnName="CAT_EditType" />
+                <ScalarProperty Name="CAT_Status" ColumnName="CAT_Status" />
+                <ScalarProperty Name="CAT_ColunmZH" ColumnName="CAT_ColunmZH" />
+                <ScalarProperty Name="CAT_Column" ColumnName="CAT_Column" />
+                <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+                <ScalarProperty Name="CAC_ID" ColumnName="CAC_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Config_AddEdit_Table">
+            <EntityTypeMapping TypeName="MyProject.Config_AddEdit_Table">
+              <MappingFragment StoreEntitySet="Config_AddEdit_Table">
+                <ScalarProperty Name="CAT_OrderBy" ColumnName="CAT_OrderBy" />
+                <ScalarProperty Name="CAT_Where" ColumnName="CAT_Where" />
+                <ScalarProperty Name="CAT_Status" ColumnName="CAT_Status" />
+                <ScalarProperty Name="CAT_Table" ColumnName="CAT_Table" />
+                <ScalarProperty Name="SMI_Code" ColumnName="SMI_Code" />
+                <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Config_List_Column">
+            <EntityTypeMapping TypeName="MyProject.Config_List_Column">
+              <MappingFragment StoreEntitySet="Config_List_Column">
+                <ScalarProperty Name="CLT_ID" ColumnName="CLT_ID" />
+                <ScalarProperty Name="CLC_ColumnType" ColumnName="CLC_ColumnType" />
+                <ScalarProperty Name="CLC_JoinColumnValue" ColumnName="CLC_JoinColumnValue" />
+                <ScalarProperty Name="CLC_JoinColumnID" ColumnName="CLC_JoinColumnID" />
+                <ScalarProperty Name="CLC_JoinWhere" ColumnName="CLC_JoinWhere" />
+                <ScalarProperty Name="CLC_JoinTable" ColumnName="CLC_JoinTable" />
+                <ScalarProperty Name="CLC_Status" ColumnName="CLC_Status" />
+                <ScalarProperty Name="CLC_ColumnZH" ColumnName="CLC_ColumnZH" />
+                <ScalarProperty Name="CLC_Column" ColumnName="CLC_Column" />
+                <ScalarProperty Name="CLC_ID" ColumnName="CLC_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Config_List_Table">
+            <EntityTypeMapping TypeName="MyProject.Config_List_Table">
+              <MappingFragment StoreEntitySet="Config_List_Table">
+                <ScalarProperty Name="CLT_OrderBy" ColumnName="CLT_OrderBy" />
+                <ScalarProperty Name="CLT_Where" ColumnName="CLT_Where" />
+                <ScalarProperty Name="CLT_Status" ColumnName="CLT_Status" />
+                <ScalarProperty Name="CLT_Table" ColumnName="CLT_Table" />
+                <ScalarProperty Name="SMI_Code" ColumnName="SMI_Code" />
+                <ScalarProperty Name="CLT_ID" ColumnName="CLT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Config_Tree_Column">
+            <EntityTypeMapping TypeName="MyProject.Config_Tree_Column">
+              <MappingFragment StoreEntitySet="Config_Tree_Column">
+                <ScalarProperty Name="CTC_ColumnType" ColumnName="CTC_ColumnType" />
+                <ScalarProperty Name="CTC_Url" ColumnName="CTC_Url" />
+                <ScalarProperty Name="CTC_Status" ColumnName="CTC_Status" />
+                <ScalarProperty Name="CTC_Column" ColumnName="CTC_Column" />
+                <ScalarProperty Name="CTT_ID" ColumnName="CTT_ID" />
+                <ScalarProperty Name="CTC_ID" ColumnName="CTC_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Config_Tree_Tale">
+            <EntityTypeMapping TypeName="MyProject.Config_Tree_Tale">
+              <MappingFragment StoreEntitySet="Config_Tree_Tale">
+                <ScalarProperty Name="CTT_OrderBy" ColumnName="CTT_OrderBy" />
+                <ScalarProperty Name="CTT_Where" ColumnName="CTT_Where" />
+                <ScalarProperty Name="CTT_Status" ColumnName="CTT_Status" />
+                <ScalarProperty Name="CTT_Table" ColumnName="CTT_Table" />
+                <ScalarProperty Name="SMI_Code" ColumnName="SMI_Code" />
+                <ScalarProperty Name="CTT_ID" ColumnName="CTT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Module_Info">
+            <EntityTypeMapping TypeName="MyProject.Sys_Module_Info">
+              <MappingFragment StoreEntitySet="Sys_Module_Info">
+                <ScalarProperty Name="SMI_Url" ColumnName="SMI_Url" />
+                <ScalarProperty Name="SMI_ParentID" ColumnName="SMI_ParentID" />
+                <ScalarProperty Name="SMI_Status" ColumnName="SMI_Status" />
+                <ScalarProperty Name="SMI_Title" ColumnName="SMI_Title" />
+                <ScalarProperty Name="SMI_Code" ColumnName="SMI_Code" />
+                <ScalarProperty Name="SMI_ID" ColumnName="SMI_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

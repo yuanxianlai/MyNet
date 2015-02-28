@@ -1,0 +1,148 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "My Learn UI";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/themes/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/themes/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/themes/assets/css/ace.min.css" rel="stylesheet" />
+    <link href="~/Content/themes/assets/css/Bootstrap-Override.css" rel="stylesheet" />
+    <script src="~/Content/themes/assets/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        if ("ontouchend" in document) {
+            document.write("<script src='assets/js/jquery.mobile.custom.min.js'><" + "script>");
+        }
+    </script>
+    <script src="~/Content/themes/assets/js/bootstrap.min.js"></script>
+    <script src="~/Content/themes/assets/js/ace-extra.min.js"></script>
+    <script src="~/Content/themes/assets/js/ace.min.js"></script>
+    <script src="~/Content/Scripts/jquery.tmpl.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default" id="navbar">
+        <div class="navbar-container" id="navbar-container">
+            <div class="navbar-header pull-left">
+                <a href="#" class="navbar-brand">
+                    <small>
+                        <i class="icon-leaf"></i>
+                        ACE后台管理系统
+                    </small>
+                </a>
+            </div>
+            <div class="navbar-header pull-right" role="navigation">
+                <!--通知中心 Start-->
+                @{Html.RenderPartial("TopNotice");}
+                <!--通知中心 End-->
+            </div>
+        </div>
+    </div>
+    <div class="main-container" id="main-container">
+        <div class="main-container-inner">
+            <a class="menu-toggler" id="menu-toggler" href="#">
+                <span class="menu-text"></span>
+            </a>
+
+            <div class="sidebar" id="sidebar">
+                <!--左边菜单栏 Start-->
+                @{Html.RenderPartial("LeftMenu");}
+                <!--左边菜单栏 End-->
+            </div>
+
+            <div class="main-content">
+                <div class="breadcrumbs" id="breadcrumbs">
+                    <!--当前位置 Start-->
+                    @*<ul class="breadcrumb">
+                        <li>
+                            <i class="icon-home home-icon"></i>
+                            <a href="#">首页</a>
+                        </li>
+                        <li class="active">控制台</li>
+                    </ul>*@
+                    <!--当前位置 End-->
+
+                    <!--搜索框 Start-->
+                    @*<div class="nav-search" id="nav-search">
+                        <form class="form-search">
+                            <span class="input-icon">
+                                <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                                <i class="icon-search nav-search-icon"></i>
+                            </span>
+                        </form>
+                    </div>*@
+                    <!--搜索框 End-->
+
+                    <!--content Start-->
+                    <div class="page-content" style="padding-top: 0;">
+                        <div class="row">
+                            <div class="col-xs-12" style="padding: 0;">
+                                <div class="tabbable">
+                                    <ul id="myTab" class="nav nav-tabs padding-12 tab-color-blue background-blue">
+                                        <li class="active">
+                                            <a href="#home" data-toggle="tab">
+                                                <i class="green icon-home bigger-110"></i>Home
+											</a>
+                                        </li>
+
+                                        <li class="">
+                                            <a href="#profile" data-toggle="tab">Messages
+                                                <span class="badge badge-danger">4</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
+                                                <i class="icon-caret-down bigger-110 width-auto"></i>
+                                            </a>
+
+                                            <ul class="dropdown-menu dropdown-info">
+                                                <li>
+                                                    <a href="#dropdown1" data-toggle="tab">@@fat</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#dropdown2" data-toggle="tab">@@mdo</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="home">
+                                            <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                                        </div>
+
+                                        <div class="tab-pane" id="profile">
+                                            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                                        </div>
+
+                                        <div class="tab-pane" id="dropdown1">
+                                            <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                                        </div>
+
+                                        <div class="tab-pane" id="dropdown2">
+                                            <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    $(function () {
+
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <!--content End-->
+                </div>
+            </div>
+        </div>
+        <!--回到顶部 Start-->
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+            <i class="icon-double-angle-up icon-only bigger-110"></i>
+        </a>
+        <!--回到顶部 End-->
+    </div>
+</body>
+</html>

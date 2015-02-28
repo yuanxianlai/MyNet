@@ -1,0 +1,99 @@
+﻿@{
+    Layout = null;
+}
+<!--快捷菜单 Start-->
+<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+    <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+        <button class="btn btn-success">
+            <i class="icon-signal"></i>
+        </button>
+
+        <button class="btn btn-info">
+            <i class="icon-pencil"></i>
+        </button>
+
+        <button class="btn btn-warning">
+            <i class="icon-group"></i>
+        </button>
+
+        <button class="btn btn-danger">
+            <i class="icon-cogs"></i>
+        </button>
+    </div>
+
+    <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+        <span class="btn btn-success"></span>
+        <span class="btn btn-info"></span>
+        <span class="btn btn-warning"></span>
+        <span class="btn btn-danger"></span>
+    </div>
+</div>
+<!--快捷菜单 End-->
+
+<!--左边菜单栏 Start-->
+<ul class="nav nav-list" id="ul_LeftMenu">
+</ul>
+<!--左边菜单栏 End-->
+
+<!--影藏左菜单 Start-->
+<div class="sidebar-collapse" id="sidebar-collapse">
+    <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+</div>
+<!--影藏左菜单 End-->
+
+<script id="MenuTemplate" type="text/x-jquery-tmpl">
+    <li id="li_Menu{{= id}}">
+        <a href="{{= url}}" class="dropdown-toggle">
+            <i class="{{= css}}"></i>
+            <span class="menu-text">{{= name}}</span>
+        </a>
+    </li>
+</script>
+<script>
+    var menuData = [
+        { id: 1, pid: 0, name: '控制台', url: 'index.html', css: 'icon-dashboard' },
+        { id: 2, pid: 0, name: '文字排版', url: 'typography.html', css: 'icon-text-width' },
+        { id: 3, pid: 0, name: 'UI 组件', url: '#', css: 'icon-desktop' },
+        { id: 4, pid: 3, name: '组件', url: 'elements.html', css: 'icon-double-angle-right' },
+        { id: 5, pid: 3, name: '按钮 &amp; 图表', url: 'buttons.html', css: 'icon-double-angle-right' },
+        { id: 6, pid: 3, name: '树菜单', url: 'treeview.html', css: 'icon-double-angle-right' },
+        { id: 7, pid: 3, name: 'jQuery UI', url: 'jquery-ui.html', css: 'icon-double-angle-right' },
+        { id: 8, pid: 3, name: '可拖拽列表', url: 'nestable-list.html', css: 'icon-double-angle-right' },
+        { id: 9, pid: 3, name: '三级菜单', url: 'nestable-list.html', css: 'icon-double-angle-right' },
+        { id: 10, pid: 9, name: '第一级', url: '#', css: 'icon-leaf' },
+        { id: 11, pid: 9, name: '第四级', url: '#', css: 'icon-pencil' },
+        { id: 12, pid: 11, name: '添加产品', url: '#', css: 'icon-plus' },
+        { id: 13, pid: 11, name: '查看商品', url: '#', css: 'icon-eye-open' },
+        { id: 14, pid: 0, name: '表格', url: '#', css: 'icon-list' },
+        { id: 15, pid: 14, name: '简单 &amp; 动态', url: 'tables.html', css: 'icon-double-angle-right' },
+        { id: 16, pid: 14, name: 'jqGrid plugin', url: 'jqgrid.html', css: 'icon-double-angle-right' },
+        { id: 17, pid: 0, name: '表单', url: '#', css: 'icon-edit' },
+        { id: 18, pid: 17, name: '表单组件', url: '#', css: 'icon-double-angle-right' },
+        { id: 19, pid: 17, name: '向导提示 &amp; 验证', url: 'form-wizard.html', css: 'icon-double-angle-right' },
+        { id: 20, pid: 17, name: '编辑器', url: 'wysiwyg.html', css: 'icon-double-angle-right' },
+        { id: 21, pid: 17, name: '文件上传', url: 'dropzone.html', css: 'icon-double-angle-right' }
+    ];
+
+    $(function () {
+        var root = $('#ul_LeftMenu');
+        for (var i = 0; i < menuData.length; i++) {
+            var item = menuData[i];
+            var node = $('#li_Menu' + item.pid);
+            if (node.length != 0) {
+                if (node.find('.arrow .icon-angle-down').length == 0) {
+                    node.children('a').append('<b class="arrow icon-angle-down"></b>');
+                }
+                var nodeRoot;
+                if (node.find('.submenu').length == 0) {
+                    nodeRoot = $('<ul class="submenu" />').appendTo(node);
+                } else {
+                    nodeRoot = node.find('.submenu');
+                }
+                nodeRoot.append($("#MenuTemplate").tmpl(item));
+            }
+            else {
+                root.append($("#MenuTemplate").tmpl(item));
+            }
+        }
+    });
+</script>
