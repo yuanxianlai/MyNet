@@ -9,11 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyModule", "MyModule\MyModu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMvc", "MyMvc\MyMvc.csproj", "{FD376E6B-42F8-42E2-969C-0D211934DD09}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{087E2E3D-68EF-4A4B-9C5F-60F7711A9D21}"
-	ProjectSection(SolutionItems) = preProject
-		MyLib\Libs.rar = MyLib\Libs.rar
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
